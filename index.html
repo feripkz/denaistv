@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DenaisTV</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1 class="neon">DenaisTV</h1>
+    </header>
+    <main>
+        <section id="login-section" class="login-section">
+            <h2 class="neon" id="loginTitle">Iniciar sesión</h2>
+            <form id="loginForm">
+                <input type="text" id="username" placeholder="Usuario" required autocomplete="off">
+                <input type="password" id="password" placeholder="Contraseña" required autocomplete="off">
+                <button type="submit" class="neon-btn">Entrar</button>
+            </form>
+            <p id="loginMsg"></p>
+            <p>¿No tienes cuenta? <a href="#" id="showRegister" class="neon-link">Regístrate</a></p>
+        </section>
+        <section id="register-section" class="login-section hidden">
+            <h2 class="neon">Registro</h2>
+            <form id="registerForm">
+                <input type="text" id="regUsername" placeholder="Usuario" required autocomplete="off">
+                <input type="password" id="regPassword" placeholder="Contraseña" required autocomplete="off">
+                <button type="submit" class="neon-btn">Registrarse</button>
+            </form>
+            <p id="registerMsg"></p>
+            <p>¿Ya tienes cuenta? <a href="#" id="showLogin" class="neon-link">Inicia sesión</a></p>
+        </section>
+        <section id="streamer-panel" class="hidden">
+            <h2 class="neon">Panel de Directo</h2>
+            <button id="startCam" class="neon-btn">Iniciar Cámara y Compartir</button>
+            <video id="videoPreview" width="640" height="360" autoplay playsinline muted style="background:#111; border-radius:10px;"></video>
+            <button id="goLive" class="neon-btn">Transmitir en Vivo</button>
+        </section>
+        <section id="viewer-panel" class="hidden">
+            <h2 class="neon">En vivo: denizze</h2>
+            <video id="liveVideo" width="640" height="360" autoplay playsinline controls style="background:#111; border-radius:10px;"></video>
+            <div class="chat-panel">
+                <h3 class="neon">Chat</h3>
+                <div id="chatMessages" class="chat-messages"></div>
+                <form id="chatForm">
+                    <input type="text" id="chatInput" placeholder="Escribe un mensaje..." autocomplete="off">
+                    <button type="submit" class="neon-btn">Enviar</button>
+                    <div class="emotes">
+                        <span class="emote">😀</span>
+                        <span class="emote">🔥</span>
+                        <span class="emote">😂</span>
+                        <span class="emote">❤️</span>
+                        <span class="emote">😎</span>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 DenaisTV</p>
+    </footer>
+    <!-- Cambia la URL por la de tu backend Node.js desplegado (por ejemplo, Railway, Render, Heroku) -->
+    <script src="https://TU_BACKEND_URL/socket.io/socket.io.js"></script>
+    <script src="/main.js"></script>
+</body>
+</html>
